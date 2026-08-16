@@ -8,9 +8,7 @@ Tertius is currently a pre-1.0 public preview. Security fixes target the latest 
 
 Do not publish security or privacy vulnerabilities in a GitHub issue, discussion, screenshot, or transcript.
 
-Use GitHub's private vulnerability reporting form for this repository:
-
-<https://github.com/jollyzachary/tertius/security/advisories/new>
+Use GitHub's [private vulnerability reporting form](https://github.com/jollyzachary/tertius/security/advisories/new) for this repository.
 
 If the private form is unavailable, open a public issue that asks the maintainer to establish private contact. Do not include exploit details, user data, credentials, transcripts, or audio in that issue.
 

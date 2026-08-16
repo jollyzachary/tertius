@@ -210,7 +210,7 @@ See [Troubleshooting](docs/TROUBLESHOOTING.md) before filing a bug. The interact
 
 ## Contributing and security
 
-Read [Contributing](CONTRIBUTING.md) before opening a pull request. Please report security or privacy problems through the private process in [Security](SECURITY.md), not a public issue.
+Read [Contributing](CONTRIBUTING.md) before opening a pull request. Review the [Security policy](https://github.com/jollyzachary/tertius/security/policy) and [report vulnerabilities privately](https://github.com/jollyzachary/tertius/security/advisories/new) through GitHub.
 
 ## License
 
