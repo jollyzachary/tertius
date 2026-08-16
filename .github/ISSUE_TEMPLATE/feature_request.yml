@@ -1,0 +1,50 @@
+name: Feature request
+description: Propose a focused improvement to the local dictation loop
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What concrete dictation problem should Tertius solve?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior
+      description: Describe the smallest interaction that solves the problem.
+    validations:
+      required: true
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform impact
+      multiple: true
+      options:
+        - macOS
+        - Windows
+        - Linux X11
+        - Linux Wayland
+        - Platform-neutral core
+        - Interface only
+    validations:
+      required: true
+  - type: textarea
+    id: privacy
+    attributes:
+      label: Privacy and permission impact
+      description: State whether this needs new data, retention, network access, permissions, or input inspection.
+    validations:
+      required: true
+  - type: checkboxes
+    id: principles
+    attributes:
+      label: Product fit
+      options:
+        - label: This can preserve local transcription and clipboard fallback.
+          required: true
+        - label: I searched existing issues and pull requests.
+          required: true

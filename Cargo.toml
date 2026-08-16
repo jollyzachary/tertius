@@ -1,0 +1,21 @@
+[workspace]
+members = [
+  "crates/tertius-core",
+  "apps/desktop/src-tauri",
+]
+resolver = "2"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+license = "MIT"
+authors = ["Farynth"]
+repository = "https://github.com/jollyzachary/tertius"
+rust-version = "1.85"
+
+[workspace.dependencies]
+anyhow = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+tracing = "0.1"
+uuid = { version = "1.18", features = ["v4", "serde"] }

@@ -1,0 +1,52 @@
+# Rust and Tauri build output
+target/
+**/target/
+
+# JavaScript dependencies and frontend output
+node_modules/
+dist/
+
+# Tauri-generated schemas
+apps/desktop/src-tauri/gen/
+
+# Generated mobile and store artwork. Tertius currently ships as a desktop app.
+apps/desktop/src-tauri/icons/android/
+apps/desktop/src-tauri/icons/ios/
+apps/desktop/src-tauri/icons/Square*.png
+apps/desktop/src-tauri/icons/StoreLogo.png
+
+# Downloaded speech engines and interrupted downloads
+models/
+*.onnx
+*.nemo
+*.tar.gz
+*.download
+tertius.json
+
+# Packaged applications and installers
+*.app/
+*.dmg
+*.msi
+*.exe
+*.AppImage
+*.deb
+*.rpm
+
+# Signing material and local configuration
+.env
+.env.*
+!.env.example
+*.cer
+*.key
+*.p12
+*.pem
+*.mobileprovision
+
+# Editor, operating-system, and log files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.log
+*.swp
+*.swo

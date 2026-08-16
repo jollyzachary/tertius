@@ -1,0 +1,101 @@
+name: Bug report
+description: Report a reproducible Tertius problem without private dictation data
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not include real dictations, audio, credentials, signing information, or screenshots containing private desktop content. Report security issues through SECURITY.md.
+  - type: input
+    id: version
+    attributes:
+      label: Tertius version or commit
+      placeholder: 0.1.0 or commit SHA
+    validations:
+      required: true
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Operating system
+      options:
+        - macOS
+        - Windows
+        - Linux X11
+        - Linux Wayland
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: system
+    attributes:
+      label: System details
+      description: Include OS version, architecture, and Linux desktop or compositor when relevant.
+      placeholder: macOS 15.6, Apple silicon
+    validations:
+      required: true
+  - type: dropdown
+    id: activation
+    attributes:
+      label: Activation path
+      options:
+        - Shortcut hold
+        - Shortcut press on / off
+        - Main dictation button
+        - Floating voice widget
+        - First-time model setup
+        - Application startup
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Reproduction
+      description: Use a synthetic phrase and list the smallest reliable sequence.
+      placeholder: |
+        1. Select a plain text field.
+        2. Hold the shortcut.
+        3. Say "This is a synthetic test."
+        4. Release the shortcut.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: observed
+    attributes:
+      label: Observed behavior
+    validations:
+      required: true
+  - type: dropdown
+    id: clipboard
+    attributes:
+      label: Did the finished text reach the clipboard?
+      options:
+        - "Yes"
+        - "No"
+        - No transcript was produced
+        - Not checked
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Sanitized logs
+      description: Optional. Remove paths, names, transcript text, tokens, and signing details.
+      render: shell
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy check
+      options:
+        - label: I removed real dictations, audio, credentials, personal paths, and unrelated desktop content.
+          required: true
+        - label: This is not a security vulnerability.
+          required: true

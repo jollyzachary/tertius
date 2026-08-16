@@ -1,0 +1,56 @@
+[package]
+name = "tertius-desktop"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+description = "Tertius by Farynth: local-first system-wide dictation"
+publish = false
+
+[lib]
+name = "tertius_desktop_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2.5", features = [] }
+
+[dependencies]
+active-win-pos-rs = "0.11"
+anyhow.workspace = true
+arboard = "3.6"
+cpal = "0.18"
+enigo = "0.6"
+flate2 = "1.1"
+futures-util = "0.3"
+parking_lot = "0.12"
+reqwest = { version = "0.12", default-features = false, features = ["rustls-tls", "stream"] }
+serde.workspace = true
+serde_json.workspace = true
+sha2 = "0.10"
+tauri = { version = "2.11.5", features = ["macos-private-api", "tray-icon"] }
+tauri-plugin-global-shortcut = "2.3.2"
+tauri-plugin-single-instance = "2.4.3"
+tar = "0.4"
+tertius-core = { path = "../../../crates/tertius-core" }
+tokio = { version = "1.48", features = ["fs", "io-util", "sync", "time"] }
+transcribe-rs = { version = "0.3.11", features = ["onnx"] }
+tracing.workspace = true
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+uuid.workspace = true
+
+[features]
+default = []
+coreml = ["transcribe-rs/ort-coreml"]
+cuda = ["transcribe-rs/ort-cuda"]
+directml = ["transcribe-rs/ort-directml"]
+rocm = ["transcribe-rs/ort-rocm"]
+webgpu = ["transcribe-rs/ort-webgpu"]
+xnnpack = ["transcribe-rs/ort-xnnpack"]
+
+[target.'cfg(target_os = "macos")'.dependencies]
+block2 = "0.6.2"
+macos-accessibility-client = "0.0.2"
+objc2 = "0.6.4"
+objc2-app-kit = { version = "0.3.2", default-features = false, features = ["std", "libc", "NSRunningApplication"] }
+objc2-av-foundation = { version = "0.3.2", default-features = false, features = ["std", "AVCaptureDevice", "AVMediaFormat", "block2"] }
