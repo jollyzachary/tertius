@@ -36,20 +36,11 @@ pub struct Transcript {
     pub words: usize,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Default, Serialize, Deserialize)]
 #[serde(default, rename_all = "camelCase")]
 pub struct UserData {
     pub settings: AppSettings,
     pub history: Vec<Transcript>,
-}
-
-impl Default for UserData {
-    fn default() -> Self {
-        Self {
-            settings: AppSettings::default(),
-            history: vec![],
-        }
-    }
 }
 
 #[derive(Clone, Debug, Serialize, Deserialize)]

@@ -1,4 +1,4 @@
-export type ActivationMode = "hold" | "toggle";
+export type ActivationMode = 'hold' | 'toggle';
 
 export interface AppSettings {
   activationMode: ActivationMode;
@@ -27,8 +27,16 @@ export interface ModelStatus {
 }
 
 export interface RuntimeStatus {
-  phase: "idle" | "starting" | "recording" | "transcribing" | "cleaning" | "inserting" | "complete" | "error";
-  mode: "pushToTalk" | "handsFree" | "manual";
+  phase:
+    | 'idle'
+    | 'starting'
+    | 'recording'
+    | 'transcribing'
+    | 'cleaning'
+    | 'inserting'
+    | 'complete'
+    | 'error';
+  mode: 'pushToTalk' | 'handsFree' | 'manual';
   level: number;
   elapsedMs: number;
   message?: string;

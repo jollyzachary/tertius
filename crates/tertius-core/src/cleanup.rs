@@ -134,7 +134,7 @@ impl CleanupPipeline {
         let before = text[..marker].trim_end();
         let after = text[marker + "scratch that".len()..].trim_start();
         let boundary = before
-            .rfind(|character| matches!(character, '.' | '!' | '?' | '\n'))
+            .rfind(['.', '!', '?', '\n'])
             .map(|index| index + 1)
             .unwrap_or(0);
         let mut result = before[..boundary].trim_end().to_owned();

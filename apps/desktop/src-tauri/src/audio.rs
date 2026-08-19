@@ -201,7 +201,7 @@ where
     f32: FromSample<T>,
 {
     let stream = device.build_input_stream(
-        config.clone(),
+        *config,
         move |input: &[T], _| {
             let mut output = samples.lock();
             if output.len() >= limit {
